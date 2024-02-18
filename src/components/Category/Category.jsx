@@ -1,21 +1,23 @@
-import React from 'react';
-import './Category.css';
+import React from "react";
+import "./Category.css";
 import ChildrenCategory from "../ChildrenCategory/ChildrenCategory.jsx";
 
-const Category = ({category, category: {childrenCategories}}) => {
+const Category = ({ category, category: { childrenCategories } }) => {
+  // console.log(category);
 
-
-    // console.log(category);
-
-    return (
-        <div className={'category-block'}>
-            {category.name}
-            <br/>
-            {childrenCategories && childrenCategories.map(childrenCategory => <ChildrenCategory
-                key={childrenCategory.id}
-                childrenCategory={childrenCategory}/>)}
-        </div>
-    );
+  return (
+    <div className={"category-block"}>
+      {category.name}
+      <br />
+      {childrenCategories &&
+        childrenCategories.map((childrenCategory) => (
+          <ChildrenCategory
+            key={childrenCategory.id}
+            childrenCategory={childrenCategory}
+          />
+        ))}
+    </div>
+  );
 };
 
 export default Category;
