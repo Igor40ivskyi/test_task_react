@@ -1,0 +1,13 @@
+.children-category-block {
+    background-color: #d9e0f4;
+}
+
+.children-category-block:hover {
+    cursor: pointer;
+}
+
+
+.children-category-block h5 {
+    padding: 10px;
+    margin: 15px;
+}
