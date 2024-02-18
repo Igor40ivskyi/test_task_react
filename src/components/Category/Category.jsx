@@ -1,6 +1,6 @@
 import React from 'react';
 import './Category.css';
-import ChildrenCategories from "../ChildrenCategories/ChildrenCategories.jsx";
+import ChildrenCategory from "../ChildrenCategory/ChildrenCategory.jsx";
 
 const Category = ({category, category: {childrenCategories}}) => {
 
@@ -11,7 +11,7 @@ const Category = ({category, category: {childrenCategories}}) => {
         <div className={'category-block'}>
             {category.name}
             <br/>
-            {childrenCategories && childrenCategories.map(childrenCategory => <ChildrenCategories
+            {childrenCategories && childrenCategories.map(childrenCategory => <ChildrenCategory
                 key={childrenCategory.id}
                 childrenCategory={childrenCategory}/>)}
         </div>
