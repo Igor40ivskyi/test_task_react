@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState} from "react";
 import "./ChildrenCategory.css";
 import { teachingMeService } from "../../services/teachingMe/teachingMe.service.js";
 
@@ -37,13 +37,16 @@ const ChildrenCategory = ({ childrenCategory: { name, code } }) => {
       );
   }
 
-  return (
-    <div className={"children-category-block"} onClick={fetchTeachers}>
-      <h5>{name}</h5>
+    return (
+        <div className={"children-category-block"}
+             onClick={() => averagePrice ? setAveragePrice(null) : fetchTeachers()}>
+            <h5>{name}</h5>
 
-      <h1>{averagePrice && averagePrice}</h1>
-    </div>
-  );
+            <div>
+                {averagePrice && averagePrice.toFixed(1)}
+            </div>
+        </div>
+    );
 };
 
 export default ChildrenCategory;
