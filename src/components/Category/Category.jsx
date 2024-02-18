@@ -3,7 +3,6 @@ import "./Category.css";
 import ChildrenCategory from "../ChildrenCategory/ChildrenCategory.jsx";
 
 const Category = ({ category, category: { childrenCategories } }) => {
-  // console.log(category);
 
   return (
     <div className={"category-block"}>

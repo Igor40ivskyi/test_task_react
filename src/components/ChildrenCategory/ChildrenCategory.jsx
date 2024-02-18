@@ -4,7 +4,7 @@ import { teachingMeService } from "../../services/teachingMe/teachingMe.service.
 
 const ChildrenCategory = ({ childrenCategory: { name, code } }) => {
   const [averagePrice, setAveragePrice] = useState(null);
-  function fetchTeachers() {
+  function calculateAveragePrice() {
     let sumOfTeachersPrices = 0;
     let totalResults = 0;
 
@@ -38,8 +38,9 @@ const ChildrenCategory = ({ childrenCategory: { name, code } }) => {
   }
 
     return (
-        <div className={"children-category-block"}
-             onClick={() => averagePrice ? setAveragePrice(null) : fetchTeachers()}>
+        <div className={`children-category-block ${averagePrice && 'good-look'}`}
+
+             onClick={() => averagePrice ? setAveragePrice(null) : calculateAveragePrice()}>
             <h5>{name}</h5>
 
             <div>
