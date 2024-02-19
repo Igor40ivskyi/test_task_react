@@ -3,11 +3,9 @@ import "./Category.css";
 import ChildrenCategory from "../ChildrenCategory/ChildrenCategory.jsx";
 
 const Category = ({ category, category: { childrenCategories } }) => {
-
   return (
     <div className={"category-block"}>
       {category.name}
-      <br />
       {childrenCategories &&
         childrenCategories.map((childrenCategory) => (
           <ChildrenCategory
@@ -15,6 +13,7 @@ const Category = ({ category, category: { childrenCategories } }) => {
             childrenCategory={childrenCategory}
           />
         ))}
+      <hr />
     </div>
   );
 };

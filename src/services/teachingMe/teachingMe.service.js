@@ -22,6 +22,19 @@ const teachingMeService = {
       },
     });
   },
+
+  postAveragePrice: (categoryName, averagePrice) => {
+    const data = {
+      categoryName,
+      averagePrice,
+    };
+
+    return teachingMeInstance.post("average-price", data, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  },
 };
 
 export { teachingMeService };

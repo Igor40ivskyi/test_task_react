@@ -1,13 +1,45 @@
 .children-category-block {
   background-color: #d9e0f4;
+  width: 50vmin;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: space-between;
+  border-radius: 5px;
 }
 
-.children-category-block:hover {
+.children-category-block button {
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  padding: 8px;
+  background-color: #a5b8f7;
+  transition: 500ms;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+
+.children-category-block button:hover {
   cursor: pointer;
 }
 
-.children-category-block h5 {
-  padding: 10px;
-  margin: 15px;
+.children-category-block button:active {
+  background-color: #285cf7;
+  color: #f74028;
 }
 
+.children-category-block > label {
+  font-family: Calibri;
+  font-size: 1.6rem;
+}
+
+.button-and-price-block {
+  display: flex;
+  align-items: center;
+}
+
+.button-and-price-block > div {
+  font-size: 1.4rem;
+  font-family: "Calibri";
+}

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./ChildrenCategory.css";
 import { teachingMeService } from "../../services/teachingMe/teachingMe.service.js";
 
@@ -37,17 +37,31 @@ const ChildrenCategory = ({ childrenCategory: { name, code } }) => {
       );
   }
 
-    return (
-        <div className={`children-category-block ${averagePrice && 'good-look'}`}
+  useEffect(() => {
+    if (averagePrice == null) return;
 
-             onClick={() => averagePrice ? setAveragePrice(null) : calculateAveragePrice()}>
-            <h5>{name}</h5>
+    teachingMeService
+      .postAveragePrice(name, averagePrice)
+      .then((value) => console.log(value));
+  }, [averagePrice]);
 
-            <div>
-                {averagePrice && averagePrice.toFixed(1)}
-            </div>
-        </div>
-    );
+  return (
+    <div className={`children-category-block`}>
+      <label>{name}</label>
+
+      <div className={"button-and-price-block"}>
+        <div>{averagePrice && averagePrice.toFixed(1)}</div>
+
+        <button
+          onClick={() =>
+            averagePrice ? setAveragePrice(null) : calculateAveragePrice()
+          }
+        >
+          Show average price
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default ChildrenCategory;

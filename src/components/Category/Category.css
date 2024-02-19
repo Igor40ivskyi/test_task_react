@@ -1,6 +1,9 @@
 .category-block {
   font-weight: bold;
-  font-family: Arial;
-  font-size: 2rem;
-  padding: 10px;
+  font-size: 1.7rem;
+  padding: 20px;
+}
+
+.category-block > hr {
+  border-color: #4483c0;
 }
